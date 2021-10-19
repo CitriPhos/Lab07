@@ -47,4 +47,12 @@ public class Player : MonoBehaviour
             GameManager.thisManager.GameOver();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("AddScore"))
+        {
+            GameManager.thisManager.UpdateScore(1);
+        }
+    }
 }
